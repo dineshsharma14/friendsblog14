@@ -1,5 +1,6 @@
 package com.launchcode.friendsblog.controller;
 
+import com.launchcode.friendsblog.dto.LoginRequest;
 import com.launchcode.friendsblog.dto.RegisterRequest;
 import com.launchcode.friendsblog.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,10 @@ public class AuthController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    @PostMapping("/login")
+    public String login(@RequestBody LoginRequest loginRequest) {
+        return authService.login(loginRequest);
 
+    }
 
 }
