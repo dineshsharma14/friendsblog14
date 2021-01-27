@@ -11,22 +11,17 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column
     @NotBlank
     private String title;
-
     @Column
     @Lob // suggest the db to store it as a large object
     @NotEmpty
     private String content;
-
     @Column
     private Instant createdOn;
-
     @Column
     private Instant updatedOn;
-
     @Column
     @NotBlank
     private String username;
