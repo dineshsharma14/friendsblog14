@@ -1,6 +1,6 @@
 package com.launchcode.friendsblog.service;
 
-import com.launchcode.friendsblog.Exception.PostNotFoundException;
+import com.launchcode.friendsblog.exception.PostNotFoundException;
 import com.launchcode.friendsblog.dto.PostDto;
 import com.launchcode.friendsblog.model.Post;
 import com.launchcode.friendsblog.repository.PostRepository;
