@@ -5,6 +5,7 @@ import com.launchcode.friendsblog.dto.RegisterRequest;
 import com.launchcode.friendsblog.model.User;
 import com.launchcode.friendsblog.repository.UserRepository;
 import com.launchcode.friendsblog.security.JwtProvider;
+import com.launchcode.friendsblog.service.AuthenticationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -40,12 +41,14 @@ public class AuthService {
         return passwordEncoder.encode(password);
     }
 
-    public String login(LoginRequest loginRequest) {
+    public AuthenticationResponse login(LoginRequest loginRequest) {
         Authentication authenticate = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
                         loginRequest.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authenticate);
-        return jwtProvider.generateToken(authenticate);
+        String authenticationToken = jwtProvider.generateToken(authenticate);
+        AuthenticationResponse response =  new AuthenticationResponse(authenticationToken, loginRequest.getUsername());
+        return response;
     }
 
     public Optional<org.springframework.security.core.userdetails.User> getCurrentUser() {

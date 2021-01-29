@@ -3,6 +3,7 @@ package com.launchcode.friendsblog.controller;
 import com.launchcode.friendsblog.dto.LoginRequest;
 import com.launchcode.friendsblog.dto.RegisterRequest;
 import com.launchcode.friendsblog.service.AuthService;
+import com.launchcode.friendsblog.service.AuthenticationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody LoginRequest loginRequest) {
+    public AuthenticationResponse login(@RequestBody LoginRequest loginRequest) {
         return authService.login(loginRequest);
 
     }
