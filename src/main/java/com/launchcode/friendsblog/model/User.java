@@ -2,6 +2,7 @@ package com.launchcode.friendsblog.model;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -11,10 +12,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
+    @NotBlank
     private String userName;
     @Column
+    @NotBlank
     private String password;
     @Column
+    @NotBlank
     private String email;
 
     public Long getId() {
