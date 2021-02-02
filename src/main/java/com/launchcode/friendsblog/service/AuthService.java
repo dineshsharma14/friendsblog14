@@ -5,7 +5,6 @@ import com.launchcode.friendsblog.dto.RegisterRequest;
 import com.launchcode.friendsblog.model.User;
 import com.launchcode.friendsblog.repository.UserRepository;
 import com.launchcode.friendsblog.security.JwtProvider;
-import com.launchcode.friendsblog.service.AuthenticationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

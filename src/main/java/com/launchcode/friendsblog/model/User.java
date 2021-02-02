@@ -5,20 +5,21 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table
+//@Table
+@Table(name = "blog_users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    @NotBlank
+    @NotBlank(message = "Username is required")
     private String userName;
     @Column
-    @NotBlank
+    @NotBlank(message = "Password is required")
     private String password;
     @Column
-    @NotBlank
+    @NotBlank(message = "Email is required")
     private String email;
 
     public Long getId() {

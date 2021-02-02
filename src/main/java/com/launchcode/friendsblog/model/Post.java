@@ -12,11 +12,11 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    @NotBlank
+    @NotBlank (message = "Title cannot be blank")
     private String title;
     @Column
     @Lob // suggest the db to store it as a large object
-    @NotEmpty
+    @NotEmpty (message = "Content cannot be empty")
     private String content;
     @Column
     private Instant createdOn;
