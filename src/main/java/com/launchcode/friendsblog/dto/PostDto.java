@@ -38,4 +38,15 @@ public class PostDto {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public PostDto(Long id, String content, String title, String username) {
+        this.id = id;
+        this.content = content;
+        this.title = title;
+        this.username = username;
+    }
+
+    public PostDto() {
+
+    }
 }

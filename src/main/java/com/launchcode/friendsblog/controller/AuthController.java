@@ -19,6 +19,12 @@ public class AuthController {
     @Autowired
     AuthService authService;
 
+//    @PostMapping("/signup")
+//    public ResponseEntity<String> signup(@RequestBody RegisterRequest registerRequest) {
+//        authService.signup(registerRequest);
+//        return new ResponseEntity<>("User registration successful", HttpsStatus.OK);
+//    }
+
     @PostMapping("/signup")
     public ResponseEntity signup(@RequestBody RegisterRequest registerRequest) {
         authService.signup(registerRequest);

@@ -26,4 +26,8 @@ public class AuthenticationResponse {
         this.username = username;
     }
 
+    public AuthenticationResponse() {
+
+    }
+
 }
