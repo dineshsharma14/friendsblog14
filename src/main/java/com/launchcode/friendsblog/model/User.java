@@ -5,8 +5,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-//@Table
-@Table(name = "blog_users")
+@Table
+//@Table(name = "blog_users")
 public class User {
 
     @Id
